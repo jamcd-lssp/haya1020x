@@ -14,11 +14,7 @@ class AddUserIdToTodos extends Migration
     public function up()
     {
         Schema::table('todos', function (Blueprint $table) {
-            $table->foreignId('user_id')->nullable();
-        });
-
-        Schema::table('todos', function (Blueprint $table) {
-            $table->foreignId('user_id')->nullable(false)->change()->constrained();
+            $table->foreignId('user_id');
         });
     }
 
